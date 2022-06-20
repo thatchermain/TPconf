@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useContentful from "./useContentful";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.scss";
@@ -17,10 +18,15 @@ import FooterMobile from "./sections/FooterMobile";
 import Cookies from "./components/Cookies";
 
 function App() {
+  const [offers, setOffers] = useState([]);
+  const { getOffers } = useContentful();
   useEffect(() => {
     AOS.init();
     AOS.refresh();
+    getOffers().then((response) => setOffers(response));
   }, []);
+  // useEffect(() => {
+  // });
   const [english, setEnglish] = useState(false);
   return (
     <div className="App">
@@ -34,7 +40,12 @@ function App() {
       <Values setEnglish={setEnglish} english={english} />
       <People setEnglish={setEnglish} english={english} />
       <Csr setEnglish={setEnglish} english={english} />
-      <Jobs setEnglish={setEnglish} english={english} />
+      <Jobs
+        setEnglish={setEnglish}
+        english={english}
+        offers={offers}
+        setOffers={setOffers}
+      />
       <Footer setEnglish={setEnglish} english={english} />
       <FooterMobile setEnglish={setEnglish} english={english} />
     </div>

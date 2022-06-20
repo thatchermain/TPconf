@@ -1,6 +1,7 @@
 import React from "react";
+import JobOffer from "../components/JobOffer";
 
-const Jobs = ({ english }) => {
+const Jobs = ({ english, offers }) => {
   return (
     <section id="jobs" className="jobs">
       <div className="maincontainer">
@@ -23,6 +24,9 @@ const Jobs = ({ english }) => {
             </button>
           </a>
         </div>
+        {offers.map((offer) => {
+          return <JobOffer title={offer.jobTitle} location={offer.location} />;
+        })}
       </div>
     </section>
   );
