@@ -1,0 +1,227 @@
+//FONTS
+
+@font-face {
+  font-family: "NotoBlack";
+  src: url("./assets/fonts/NotoSans-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NotoBold";
+  src: url("./assets/fonts/NotoSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NotoReg";
+  src: url("./assets/fonts/NotoSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SanBlack";
+  src: url("./assets/fonts/Sancoale\ Softened\ Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SanBold";
+  src: url("./assets/fonts/Sancoale\ Softened\ Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SanReg";
+  src: url("./assets/fonts/Sancoale\ Softened\ Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SanSoft";
+  src: url("./assets/fonts/Sancoale\ Softened.ttf") format("truetype");
+}
+
+/////////////////////////////////////////
+
+//COLORS
+
+$white: #ffffff;
+$black: #000000;
+$gray: #787878;
+$blue: #3047b0;
+$pink: #ff0082;
+$violet: #780096;
+$fixedNav: #e2548c;
+$fixedMobileNav: #b74076;
+//GRADIENT
+$gradientLight: #ff0082;
+$gradientDark: #780096;
+
+//CONST STYYLES
+.maincontainer {
+  width: auto;
+  margin: 0 6vw;
+  @media screen and (max-width: 756px) {
+    margin: 0 3vw;
+  }
+}
+.maincontainer-margin-right {
+  width: auto;
+  margin: 0 12vw 0 0;
+}
+.maincontainer-margin-left {
+  width: auto;
+  margin: 0 0 0 6vw;
+}
+
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  width: 300px;
+  height: 50px;
+  border-radius: 123px;
+  background: transparent;
+  text-align: center;
+  font-family: "NotoBold";
+  font-size: 1.25rem;
+  border: 1px solid $violet;
+  //gradient text
+  background: -webkit-linear-gradient(45deg, $gradientLight, $gradientDark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &:hover {
+    -webkit-background-clip: text;
+    background: -webkit-linear-gradient(45deg, $gradientLight, $gradientDark);
+    -webkit-text-fill-color: $white;
+    border: none;
+    transform: scale(1.05);
+  }
+}
+.section-name {
+  font-family: "NotoReg";
+  font-size: 1rem;
+  color: $black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 2rem 0;
+}
+.section-name--white {
+  color: $white;
+  font-weight: 400;
+}
+.section-title {
+  font-family: "SanSoft";
+  font-weight: 700;
+  color: $blue;
+  font-size: clamp(2rem, 4vw, 3rem);
+  @media screen and (max-width: 1440px) {
+    font-size: clamp(1rem, 3vw, 3rem);
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: clamp(1rem, 2.5vw, 3rem);
+  }
+  @media screen and (max-width: 756px) {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+}
+.section-description {
+  font-family: "NotoReg";
+  font-weight: 400;
+  color: $black;
+  font-size: 1.125rem;
+  line-height: 27px;
+  @media screen and (max-width: 1440px) {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: 756px) {
+    font-size: 0.8rem;
+    line-height: 20px;
+  }
+}
+.banner {
+  text-align: center;
+}
+.banner__h1 {
+  text-align: center;
+  font-size: 4rem;
+  line-height: 72px;
+  font-family: "SanBold";
+
+  @media screen and (max-width: 1440px) {
+  }
+  @media screen and (max-width: 756px) {
+    font-size: clamp(2rem, 3vw, 4rem);
+    line-height: 30px;
+  }
+
+  background: -webkit-linear-gradient(45deg, $gradientLight, $gradientDark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient {
+  background: -webkit-linear-gradient(45deg, $gradientLight, $gradientDark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+////////////////////////////////////
+//SLIDER
+////////////////////////////////////
+
+.slider {
+  cursor: grab;
+  overflow-x: hidden;
+  width: 80%;
+  height: 30rem;
+  margin: 5rem 0 0rem 10rem;
+  padding: 2rem;
+  @media screen and (max-width: 1440px) {
+    height: 26rem;
+  }
+  @media screen and (max-width: 756px) {
+    margin: 0;
+    width: 100%;
+  }
+}
+.slider__inner {
+  display: flex;
+  column-gap: 2rem;
+  height: 100%;
+}
+.slider__items {
+  box-shadow: 0px 0px 5px 5px rgb(224, 220, 220);
+}
+.slider__item {
+  height: 20rem;
+  min-width: 20rem;
+  position: relative;
+  padding: 1rem;
+  @media screen and (max-width: 1440px) {
+  }
+}
+.slider__item img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  object-fit: cover;
+  @media screen and (max-width: 1440px) {
+    height: 90%;
+  }
+}
+
+.slider__item--csr {
+  min-width: 20rem;
+  height: 100%;
+  position: relative;
+  padding: 1rem;
+}
+.slider__title {
+  font-family: "SanSoft";
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.slider__info {
+  font-family: "NotoReg";
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  @media screen and (max-width: 756px) {
+    padding: 1rem 0;
+  }
+}
+.slider__hashtag {
+  font-family: "Sansoft";
+  font-weight: bold;
+  padding: 1rem 2rem;
+  position: absolute;
+  bottom: 5%;
+}

@@ -1,0 +1,1175 @@
+@import "./_variables.scss";
+
+//RESET
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  scroll-behavior: smooth;
+  width: 100vw;
+  overflow-x: hidden;
+  // @media only screen and (max-width: 1440px) and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.25) {
+  //   zoom: 0.8;
+  // }
+  // @media only screen and (max-width: 1440px) and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5) {
+  //   zoom: 0.65;
+  // }
+}
+a {
+  text-decoration: none;
+}
+
+///////////////////////////////////////////
+//COOKIES
+///////////////////////////
+
+.cookies {
+  position: fixed;
+  bottom: 5px;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  width: 100%;
+  font-family: "NotoReg";
+  font-size: 13px;
+}
+.no-cookies {
+  display: none;
+}
+.cookies__content {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  width: 50%;
+  height: 70px;
+  background-color: blue;
+}
+.cookies__bar {
+  margin: 0 auto;
+
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+  z-index: 1;
+  gap: 1rem;
+}
+.cookies__buttons {
+  display: flex;
+  padding: 0 2rem;
+  gap: 1rem;
+}
+.cookies__link {
+  text-decoration: none;
+  color: $pink;
+}
+.accept {
+  cursor: pointer;
+  background-color: $black;
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+.privacy {
+  cursor: pointer;
+  background-color: $white;
+  color: $black;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($black, 0.4);
+  width: 100%;
+  height: calc(100vh - 75px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  @media screen and (max-width: 1024px) {
+    height: calc(100vh - 105px);
+  }
+  @media screen and (max-width: 1024px) {
+    height: calc(100vh - 140px);
+  }
+  @media screen and (max-width: 375px) {
+    height: calc(100vh - 155px);
+  }
+}
+.modal__container {
+  z-index: 100;
+  position: fixed;
+  max-width: 800px;
+  height: 500px;
+  bottom: 10%;
+  background-color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  overflow-x: hidden;
+  @media screen and (max-width: 1024px) {
+    bottom: 15%;
+  }
+  @media screen and (max-width: 756px) {
+    bottom: 20%;
+  }
+  @media screen and (max-width: 375px) {
+    bottom: 22%;
+    width: 90%;
+    padding: 1rem;
+  }
+}
+.modal__container-text {
+  overflow-x: hidden;
+  padding: 2rem 1rem;
+  width: 100%;
+  height: 85%;
+  @media screen and (max-width: 375px) {
+    padding: 0rem;
+  }
+}
+.cookie li {
+  margin-left: 2rem;
+}
+.privacy__button {
+  margin-top: 1rem;
+  background-color: $black;
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+///////////////////////////////////////////
+//NAVBAR
+///////////////////////////
+.navbar {
+  position: relative;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: transparent;
+  padding: 1rem 0;
+
+  @media screen and (max-width: 990px) {
+    display: none;
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  &__menu {
+    display: flex;
+    justify-content: end;
+    min-width: 55%;
+    max-width: 70vw;
+    @media screen and (max-width: 1200px) {
+      min-width: 60%;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 100%;
+  }
+  &__item {
+    // padding: 0 1rem;
+  }
+  &__link {
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: $white;
+    font-size: 1.125rem;
+    font-family: "SanSoft";
+    font-weight: 400;
+    padding: 0 10px;
+    &:before {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      content: "";
+      width: calc(100% + 0px);
+      height: 3px;
+      background-color: $white;
+      transform: scaleX(0);
+      transition: 0.4s ease-in-out;
+    }
+    &:hover:before {
+      transform: scaleX(1);
+      transition: 0.4s ease-in-out;
+    }
+  }
+}
+.navbar__button {
+  color: $white;
+  background: transparent;
+  border: 1px solid $white;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.navbar-fixed {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background-color: $fixedNav;
+  padding: 1rem 0;
+  @media screen and (max-width: 990px) {
+    display: none;
+  }
+}
+
+///////////////////////////////////////////
+//NAVBAR MOBILE
+/////////////////////////////////////////
+.mobilenav {
+  position: sticky;
+  top: 0;
+  padding: 1rem 0;
+  width: 100vw;
+  height: 70px;
+  margin: 0 auto;
+  background-color: $fixedMobileNav;
+  background-color: transparent;
+  z-index: 10;
+  @media screen and (min-width: 990px) {
+    display: none;
+  }
+}
+.navActive {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 70px;
+  margin: 0 auto;
+  background-color: $white;
+}
+.mobilenav__wrapper {
+  padding: 0 2rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobilenav__hamburger {
+  padding: 1rem;
+  cursor: pointer;
+}
+.mobilenav__hidden {
+  position: absolute;
+  top: 60px;
+  background-color: rgb(255, 255, 255);
+  transition: 0.4s;
+  transform: translateX(-100%);
+  width: 100%;
+  height: 100vh;
+  padding-top: 3rem;
+}
+.mobilenav__active {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  height: 100vh;
+  padding-top: 3rem;
+  transition: 0.4s;
+  background-color: rgb(255, 255, 255);
+}
+.mobilenav__list {
+  list-style: none;
+  padding: 2rem;
+}
+.mobilenav__list-item {
+  padding: 0.25rem 0;
+}
+
+.logomobile__active {
+  padding: 0.5rem 0.75rem;
+}
+.mobilenav__open {
+  width: 25px;
+  height: 2px;
+  top: -10px;
+  left: 5px;
+  background-color: $white;
+  position: relative;
+
+  transform-origin: 0 0;
+  transition: 0.4s;
+  &:after,
+  &:before {
+    position: absolute;
+    content: "";
+    background-color: $white;
+    width: 25px;
+    height: 2px;
+    transition: 0.4s;
+  }
+  &:after {
+    top: 16px;
+  }
+  &:before {
+    top: 8px;
+  }
+}
+.mobile__nav__close {
+  width: 25px;
+  height: 2px;
+  top: -2px;
+  left: 5px;
+  background-color: $black;
+  position: relative;
+
+  transform: rotate(45deg);
+  transform-origin: 0 0;
+  transition: 0.4s;
+
+  &:after {
+    position: absolute;
+    content: "";
+    background-color: $black;
+    transform: rotate(-270deg);
+    width: 25px;
+    height: 2px;
+    transition: 0.4s;
+  }
+}
+.linkMobile {
+  text-decoration: none;
+  color: $black;
+  font-size: 2.5rem;
+  font-family: "SanSoft";
+  font-weight: bold;
+  line-height: 45px;
+}
+
+.mobilenav__button {
+  font-family: "Sansoft";
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: $black;
+  background: transparent;
+  border: 1px solid $black;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+.mobilenav-fixed {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 70px;
+
+  background-color: $fixedNav;
+
+  color: $black;
+  padding: 1rem 0;
+}
+.activeFixed {
+  background-color: $white;
+}
+///////////////////////////////////////////
+//HEADER
+/////////////////////////////////////////
+.header {
+  position: relative;
+  width: 100vw;
+  height: 95vh;
+  top: -70px;
+
+  background: url("./assets/images/Hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30% 100%;
+
+  @media screen and (max-width: 756px) {
+    background: url("./assets/images/HeroMobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 50%;
+  }
+  @media screen and (max-width: 756px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+.title-container {
+  position: absolute;
+  bottom: 0;
+  @media screen and (max-width: 756px) {
+    position: relative;
+    top: 20%;
+  }
+  &__title {
+    font-family: "SanReg";
+    font-weight: 400;
+    color: $white;
+    font-size: clamp(3.25rem, 4.5vw, 6rem);
+    line-height: 1.1;
+    padding-top: 25%;
+    @media screen and (max-width: 756px) {
+      font-size: clamp(2rem, 4.5vw, 6rem);
+    }
+  }
+  &__button {
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    border-radius: 123px;
+    background-color: transparent;
+    text-align: center;
+    font-family: "NotoBold";
+    font-size: 1.25rem;
+    margin: 4rem 0;
+    border: 1px solid $white;
+    color: $white;
+    &:hover {
+      color: $gradientLight;
+      background-color: $white;
+    }
+  }
+}
+
+///////////////////////////////////////////
+//INTRO
+/////////////////////////////////////////
+.intro__content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  @media screen and (max-width: 756px) {
+    flex-direction: column;
+  }
+}
+.intro__content-image {
+  position: relative;
+  width: 100%;
+  padding: 8rem 0 6rem 2rem;
+  @media screen and (max-width: 756px) {
+    padding: 6rem 0 2rem 2rem;
+  }
+  &:before {
+    position: absolute;
+    top: 0;
+    left: -35%;
+    content: "";
+    width: 120%;
+    height: 100%;
+    background-color: $blue;
+    z-index: -2;
+
+    @media screen and (max-width: 756px) {
+      top: 10%;
+    }
+  }
+}
+.intro__content-image img {
+  width: 100%;
+}
+.intro__content-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 0 2rem;
+  &--title {
+    padding: 2rem 0;
+  }
+  &--description {
+  }
+}
+.intro__banner {
+  padding: 10rem 0 0;
+  margin: 0 auto;
+  text-align: center;
+  @media screen and (max-width: 756px) {
+    padding: 4rem 0 0;
+  }
+}
+
+///////////////////////////////////////////
+//ABOUT
+/////////////////////////////////////////
+.about {
+  padding-top: 70px;
+}
+.about__content {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 0 0 1rem;
+  @media screen and (max-width: 756px) {
+    flex-direction: column;
+  }
+}
+.about__content-info {
+  width: 100%;
+}
+.about__content-info--title {
+}
+.about__content-info--description {
+  padding: 2rem 0;
+}
+.about__content-button {
+  margin-bottom: 2rem;
+}
+.about__content-stats {
+  position: relative;
+  width: 100%;
+  padding-left: 5rem;
+  @media screen and (max-width: 1440px) {
+    top: 5rem;
+  }
+  @media screen and (max-width: 756px) {
+    padding-left: 1rem;
+  }
+}
+.about__content-stats--stat {
+  position: relative;
+  width: 200px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media screen and (max-width: 756px) {
+    width: 140px;
+    height: 150px;
+  }
+  &-one {
+    @media screen and (max-width: 756px) {
+      position: relative;
+      top: -100px;
+    }
+  }
+  &-two {
+    position: absolute;
+    left: 350px;
+    top: 160px;
+    @media screen and (max-width: 1440px) {
+      left: 300px;
+      top: 100px;
+    }
+    @media screen and (max-width: 756px) {
+      position: relative;
+      left: 170px;
+      top: -130px;
+    }
+  }
+  &-three {
+    position: absolute;
+    top: 300px;
+    @media screen and (max-width: 1440px) {
+      top: 200px;
+    }
+    @media screen and (max-width: 756px) {
+      position: relative;
+      left: 70px;
+      top: -100px;
+    }
+  }
+}
+.stat-text-gray {
+  font-family: "NotoReg";
+  font-size: 1rem;
+  color: $gray;
+  @media screen and (max-width: 1440px) {
+    font-size: 0.9rem;
+  }
+}
+.stat-number {
+  padding: 1rem 0;
+  font-family: "SanReg";
+  font-size: 4rem;
+  font-weight: 700;
+  @media screen and (max-width: 1440px) {
+    font-size: 3rem;
+  }
+}
+.stat-text-pink {
+  font-family: "SanReg";
+  font-size: 2.125rem;
+  color: $pink;
+  @media screen and (max-width: 1440px) {
+    font-size: 1.5rem;
+  }
+}
+
+///////////////////////////////////////////
+//BENEFITS
+/////////////////////////////////////////
+.benefits {
+  padding-top: 70px;
+}
+.benefits__slider {
+  padding: 5rem 0 0;
+  @media screen and (max-width: 756px) {
+    padding: 0;
+  }
+}
+.slider__text {
+  font-family: "SanSoft";
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+  @media screen and (max-width: 1440px) {
+    padding: 0;
+  }
+}
+.slider__icon-wrapper {
+  text-align: center;
+}
+.slider__icon {
+  font-size: 3rem;
+  color: $fixedNav;
+  animation: slide 2s linear infinite;
+}
+@keyframes slide {
+  23% {
+    transform: translate(-30%);
+  }
+
+  66% {
+    transform: translate(50%);
+  }
+}
+///////////////////////////////////////////
+//VALUES
+/////////////////////////////////////////
+
+.values__content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  gap: 3rem;
+  padding: 10rem 0 0;
+  @media screen and (max-width: 756px) {
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+}
+.values__content-image {
+  padding-top: 10rem;
+  width: 100%;
+
+  @media screen and (max-width: 756px) {
+    padding: 1rem;
+  }
+}
+.values__content-image img {
+  width: 100%;
+}
+.values__content-info {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $blue;
+  padding: 4rem 4rem 4rem 4rem;
+  @media screen and (max-width: 756px) {
+    padding: 1rem;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    z-index: -2;
+    top: 0;
+    left: -20%;
+    @media screen and (max-width: 756px) {
+      top: -10%;
+      left: 0;
+      width: 100vw;
+      height: 110%;
+    }
+  }
+  &--title {
+    color: $white;
+    padding-bottom: 2rem;
+  }
+  &--description {
+    color: $white;
+    font-size: 1.125rem;
+    line-height: 27px;
+    font-family: "NotoReg";
+    @media screen and (max-width: 756px) {
+      font-size: 0.8rem;
+    }
+  }
+}
+.values__content-button {
+  display: block;
+  margin: 0 auto 4rem;
+}
+.values__banner {
+  padding: 8rem 0 4rem;
+  text-align: center;
+}
+
+///////////////////////////////////////////
+//PEOPLE
+/////////////////////////////////////////
+
+.people__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5rem 0;
+  &--images {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    margin: 4rem;
+    @media screen and (max-width: 756px) {
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    width: 60%;
+  }
+  @media screen and (max-width: 1200px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 756px) {
+    padding: 0;
+    width: 50%;
+  }
+}
+.images__left {
+  position: relative;
+  width: 100%;
+  gap: 1rem;
+  font-family: "NotoReg";
+  font-size: 1.25rem;
+  @media screen and (max-width: 756px) {
+    margin: 0;
+    width: 240px;
+    height: 430px;
+    text-align: center;
+  }
+  &:before {
+    position: absolute;
+    top: 90%;
+    left: -20%;
+    content: "Wierzymy  w siłę ludzi";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $white;
+    width: 49%;
+    height: 15%;
+    background-image: linear-gradient(to right, $gradientLight, $gradientDark);
+    @media screen and (max-width: 756px) {
+      top: 5%;
+      left: -30%;
+      width: 70%;
+    }
+  }
+  &--english {
+    position: relative;
+    width: 100%;
+    gap: 1rem;
+    font-family: "NotoReg";
+    font-size: 1.25rem;
+    @media screen and (max-width: 756px) {
+      margin: 0;
+      width: 240px;
+      height: 430px;
+      text-align: center;
+    }
+    &:before {
+      position: absolute;
+      top: 90%;
+      left: -20%;
+      content: "We believe in the power of people";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: $white;
+      width: 49%;
+      height: 15%;
+      background-image: linear-gradient(
+        to right,
+        $gradientLight,
+        $gradientDark
+      );
+      @media screen and (max-width: 756px) {
+        top: 5%;
+        left: -30%;
+        width: 70%;
+      }
+    }
+  }
+}
+.images__left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.images__left--english img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.images__right {
+  position: relative;
+  width: 100%;
+  font-family: "NotoReg";
+  font-size: 1.25rem;
+  @media screen and (max-width: 756px) {
+    margin-top: 1rem;
+    width: 260px;
+    height: 210px;
+    left: -40%;
+    top: 2rem;
+  }
+  &--top {
+    padding-bottom: 1rem;
+    &:before {
+      position: absolute;
+      top: -7%;
+      right: 10%;
+      text-align: center;
+      content: "Przyjmujemy i akceptujemy";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      width: 49%;
+      height: 15%;
+      background-image: linear-gradient(
+        to right,
+        $gradientLight,
+        $gradientDark
+      );
+      @media screen and (max-width: 756px) {
+        top: -15%;
+        left: 50%;
+        width: 170px;
+        height: 70px;
+      }
+    }
+  }
+  &--bottom {
+    @media screen and (max-width: 756px) {
+      top: -15%;
+      left: 50%;
+      width: 310px;
+      height: 270px;
+    }
+    &:before {
+      position: absolute;
+      top: 55%;
+      right: -45%;
+      content: "Inspirujemy i motywujemy";
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      width: 49%;
+      height: 15%;
+      background-image: linear-gradient(
+        to right,
+        $gradientLight,
+        $gradientDark
+      );
+      @media screen and (max-width: 756px) {
+        top: 180%;
+        left: 40%;
+        width: 170px;
+        height: 70px;
+      }
+    }
+  }
+}
+.images__right img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.images__right--english {
+  position: relative;
+  width: 100%;
+  font-family: "NotoReg";
+  font-size: 1.25rem;
+  @media screen and (max-width: 756px) {
+    margin-top: 1rem;
+    width: 260px;
+    height: 210px;
+    left: -40%;
+    top: 2rem;
+  }
+  &--top {
+    padding-bottom: 1rem;
+    &:before {
+      position: absolute;
+      top: -7%;
+      right: 10%;
+      text-align: center;
+      content: "We welcome and accept";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      width: 49%;
+      height: 15%;
+      background-image: linear-gradient(
+        to right,
+        $gradientLight,
+        $gradientDark
+      );
+      @media screen and (max-width: 756px) {
+        top: -15%;
+        left: 50%;
+        width: 170px;
+        height: 70px;
+      }
+    }
+  }
+  &--bottom {
+    @media screen and (max-width: 756px) {
+      top: -15%;
+      left: 50%;
+      width: 310px;
+      height: 270px;
+    }
+    &:before {
+      position: absolute;
+      top: 55%;
+      right: -45%;
+      content: "We inspire and motivate";
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      width: 49%;
+      height: 15%;
+      background-image: linear-gradient(
+        to right,
+        $gradientLight,
+        $gradientDark
+      );
+      @media screen and (max-width: 756px) {
+        top: 180%;
+        left: 40%;
+        width: 170px;
+        height: 70px;
+      }
+    }
+  }
+}
+.images__right--english img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.people__content--info {
+  font-family: "NotoReg";
+  font-size: 1.125rem;
+  padding: 2rem;
+  @media screen and (max-width: 756px) {
+    width: 100vw;
+    margin-top: 15rem;
+  }
+}
+
+///////////////////////////////////////////
+//CSR
+/////////////////////////////////////////
+
+.csr {
+  padding-top: 70px;
+}
+.csr__content-info--description {
+  font-family: "NotoReg";
+  font-size: 1.125rem;
+  padding: 2rem 0;
+}
+.csr__content {
+  padding: 10rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 756px) {
+    flex-direction: column-reverse;
+    padding: 5rem 0 2rem;
+  }
+}
+.csr__content-stats {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  @media screen and (max-width: 756px) {
+    flex-direction: column;
+  }
+  &--cert {
+    max-width: 150px;
+    @media screen and (max-width: 756px) {
+      padding-top: 2rem;
+    }
+  }
+  &--cert img {
+    width: 100%;
+  }
+  &--procentage {
+    gap: 8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media screen and (max-width: 756px) {
+      gap: 2rem;
+    }
+  }
+}
+.procentage-number {
+  font-family: "SanBlack";
+  font-size: 5.5rem;
+}
+.procentage-text {
+  font-family: "SanSoft";
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.csr__content-image {
+  width: 100%;
+  position: relative;
+  @media screen and (max-width: 756px) {
+    margin-bottom: 4rem;
+  }
+  &:before {
+    position: absolute;
+    right: 0;
+    top: -10%;
+    content: "";
+    width: 70%;
+    height: 120%;
+    background-color: $blue;
+    z-index: -1;
+  }
+}
+.csr__content-image img {
+  width: 100%;
+}
+//////////////////////////////////
+//JOBS
+//////////////////////////////////
+.jobs {
+  padding-top: 70px;
+}
+.jobs__buttons {
+  padding: 5rem 0 10rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5rem 11rem;
+  flex-wrap: wrap;
+}
+//////////////////////////////////
+//FOOTER
+//////////////////////////////////
+.footer {
+  background-color: $violet;
+  @media screen and(max-width:756px) {
+    display: none;
+  }
+}
+.footer__content {
+  position: relative;
+
+  padding: 2rem 0 2rem 15vw;
+  display: flex;
+  justify-content: start;
+  color: $white;
+  gap: 10vw;
+  font-family: "NotoReg";
+  line-height: 25px;
+  @media screen and (max-width: 756px) {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    padding: 2rem 5vw;
+  }
+  &--left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.social {
+  display: flex;
+  gap: 2rem;
+}
+.social-icon {
+  padding: 0rem;
+}
+.email {
+  padding: 1rem 0;
+}
+.location-top {
+  padding: 2rem 0;
+  display: flex;
+  gap: 5vw;
+}
+.city {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+.footer-copyright {
+  background-color: $white;
+  padding-left: 15vw;
+  @media screen and (max-width: 756px) {
+    padding-left: 5vw;
+  }
+}
+.footer-copyright-text {
+  padding: 2rem 0;
+  font-family: "NotoReg";
+}
+
+.footerMobile {
+  background-color: $violet;
+  @media screen and(min-width:757px) {
+    display: none;
+  }
+}
+.logo-footer-mobile {
+  padding-bottom: 4rem;
+}
+.logo-footer-mobile img {
+  padding-bottom: 2rem;
+}
