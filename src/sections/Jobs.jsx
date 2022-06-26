@@ -13,7 +13,7 @@ const Jobs = ({ english, offers }) => {
             ? "Szukasz idealnej oferty pracy? Mamy ich wiele"
             : "Are you looking for a career? We have many"}
         </h2>
-        <div className="jobs__buttons">
+        {/* <div className={offers ? "jobs__buttons" : "jobs__buttons-hidden"}>
           <a
             href="https://www.teleperformance.com/en-us/careers/job-opportunities/ "
             target="_blank"
@@ -23,10 +23,21 @@ const Jobs = ({ english, offers }) => {
               {!english ? "Aplikuj teraz" : "Apply now"}
             </button>
           </a>
+        </div> */}
+        <div className="jobsContainer">
+          {offers.map((offer) => {
+            return (
+              <JobOffer
+                english={english}
+                titlePl={offer.jobTitlePl}
+                titleEn={offer.jobTitleEn}
+                locationPl={offer.locationPl}
+                locationEn={offer.locationEn}
+                link={offer.link}
+              />
+            );
+          })}
         </div>
-        {offers.map((offer) => {
-          return <JobOffer title={offer.jobTitle} location={offer.location} />;
-        })}
       </div>
     </section>
   );
