@@ -99,7 +99,7 @@ const NavbarMobile = ({ toggle, isOpen, setIsOpen, english, setEnglish }) => {
             className="'mobilenav__list-item'"
             onClick={() => setShowMobile(false)}
           >
-            <a className="linkMobile" href="#contact">
+            <a className="linkMobile" href="#contactMobile">
               {!english ? "Kontakt" : "Contact"}
             </a>
           </li>

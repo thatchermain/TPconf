@@ -1079,13 +1079,13 @@ a {
 .csr__content-stats--info {
   font-family: "NotoReg";
   margin: 0 0 0 5rem;
-  font-size: clamp(0.75rem, 1vw, 1rem);
+  font-size: clamp(0.85rem, 1vw, 1rem);
   text-align: left;
   min-height: 4rem;
 }
 .csr__content-stats--circle {
   font-family: "NotoReg";
-  font-size: 2rem;
+  font-size: 1.5rem;
   position: absolute;
   background: linear-gradient(45deg, $gradientLight, $gradientDark);
   padding: 1rem;
@@ -1113,11 +1113,15 @@ a {
   //   width: 70px;
   //   top: -0.1rem;
   // }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1300px) {
     height: 70px;
     width: 70px;
     top: 50%;
     transform: translate(0%, -50%);
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: 1rem;
   }
 }
 // .procentage-number {

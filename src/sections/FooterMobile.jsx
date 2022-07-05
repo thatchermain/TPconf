@@ -5,7 +5,7 @@ import Instagram from "../assets/images/instagram.png";
 
 const FooterMobile = ({ english }) => {
   return (
-    <footer id="contact" className="footerMobile">
+    <footer id="contactMobile" className="footerMobile">
       <div className="footer__content">
         <div className="footer__content--left">
           <div className="logo-footer-mobile">
