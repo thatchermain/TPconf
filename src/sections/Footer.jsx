@@ -44,14 +44,16 @@ const Footer = ({ english }) => {
             <div className="location-top--right">
               <p className="city">KRAKÓW</p>
               <p>
-                ul. Wielicka 28 <br /> 30-552 Kraków
+                ul. Wielicka 20 <br /> 30-663 Kraków
               </p>
             </div>
           </div>
           <div className="location-bottom">
             <p className="city">KATOWICE</p>
             <p>
-              Biuro 1 <br /> ul. Chorzowska 146 D <br /> 40-101 Katowice <br />
+              Biuro 1 <br /> ul. Chorzowska 146{" "}
+              {!english ? "budynek" : "building"} D <br /> 40-101 Katowice{" "}
+              <br />
               <br /> Biuro 2 <br /> Al. Roździeńskiego 1 A <br /> 40-202
               Katowice
             </p>

@@ -19,8 +19,8 @@ const About = ({ english, setEnglish }) => {
               <br />
               <br />
               {!english
-                ? "Teleperformance Polska obecne jest na polskim rynku nieprzerwanie od 20 lat. Działamy w czterech oddziałach zlokalizowanych w Warszawie, Krakowie i Katowicach."
-                : "Teleperformance Poland has been present on the Polish market for over 20 years. We operate from 4 sites, located in Warsaw, Katowice and Krakow."}
+                ? "Teleperformance Polska obecne jest na polskim rynku nieprzerwanie od 25 lat. Działamy w czterech oddziałach zlokalizowanych w Warszawie, Krakowie i Katowicach."
+                : "Teleperformance Poland has been present on the Polish market for over 25 years. We operate from 4 sites, located in Warsaw, Katowice and Krakow."}
             </p>
             <a href="#jobs">
               <button className="about__content-button button">

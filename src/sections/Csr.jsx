@@ -30,24 +30,37 @@ const Csr = ({ english, setEnglish }) => {
             <img src={CertImg} alt="" />
           </div>
           <div className="csr__content-stats--procentage">
-            <div className="csr__content-stats--procentage-top">
-              <span className="procentage-number text-gradient">54%</span>
-              <p className="procentage-text">
-                {!english ? "udział kobiet" : "percentage of women"} <br />{" "}
-                {!english ? "wśród zatrudnionych" : " in the workforce"}
-              </p>
+            <div className="csr__content-stats--banner">
+              <div className="csr__content-stats--circle">90%</div>
+              <div className="csr__content-stats--info">
+                {!english
+                  ? "Pracowników Teleperformace Polska uważa, że są traktowani sprawiedliwie niezależnie od płci, pochodzenia, orientacji, wieku"
+                  : "of Teleperformance Polska employees say they are treated fairly regardless of their gender, background, sexual orientation or age"}
+              </div>
             </div>
-            <div className="csr__content-stats--procentage-bottom">
-              <span className="procentage-number text-gradient">15%</span>
-              <p className="procentage-text">
+            <div className="csr__content-stats--banner">
+              <div className="csr__content-stats--circle">90%</div>
+              <div className="csr__content-stats--info">
                 {!english
-                  ? "zmniejszenie śladu węglowego"
-                  : "decrease in carbon footprint"}{" "}
-                <br />{" "}
+                  ? "Pracowników Teleperformace Polska uważa, że jest to bezpieczne miejsce pracy"
+                  : "of Teleperformance Polska employees feel they work in a safe place"}
+              </div>
+            </div>
+            <div className="csr__content-stats--banner">
+              <div className="csr__content-stats--circle">90%</div>
+              <div className="csr__content-stats--info">
                 {!english
-                  ? "na pracownika od 2020 do 2021"
-                  : "per employee from 2020 to 2021"}
-              </p>
+                  ? "Pracowników Teleperformace Polska ocenia pozytywnie sposób przywitania ich w firmie"
+                  : "of Teleperformance Polska employees speak positively about the welcome they received from the company"}
+              </div>
+            </div>
+            <div className="csr__content-stats--banner">
+              <div className="csr__content-stats--circle">87%</div>
+              <div className="csr__content-stats--info">
+                {!english
+                  ? "Pracowników Teleperformace Polska uważa, że kadra zarządzająca jest zawsze dostępna"
+                  : "of Teleperformance Polska employees say the management team is always available"}
+              </div>
             </div>
           </div>
         </div>

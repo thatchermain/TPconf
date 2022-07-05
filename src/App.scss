@@ -779,13 +779,13 @@ a {
     position: absolute;
     top: 90%;
     left: -20%;
-    content: "Wierzymy  w siłę ludzi";
+    content: "Wierzymy w siłę ludzi";
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: $white;
-    width: 49%;
+    width: 52%;
     height: 15%;
     background-image: linear-gradient(to right, $gradientLight, $gradientDark);
     @media screen and (max-width: 756px) {
@@ -1022,7 +1022,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 756px) {
+  @media screen and (max-width: 1000px) {
+    // @media screen and (max-width: 1200px) {
     flex-direction: column-reverse;
     padding: 5rem 0 2rem;
   }
@@ -1032,9 +1033,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
-  @media screen and (max-width: 756px) {
+  gap: 1rem;
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
+    padding-top: 5rem;
   }
   &--cert {
     max-width: 150px;
@@ -1046,25 +1048,87 @@ a {
     width: 100%;
   }
   &--procentage {
-    gap: 8rem;
+    gap: 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @media screen and (max-width: 756px) {
+    @media screen and (max-width: 1200px) {
       gap: 2rem;
     }
   }
 }
-.procentage-number {
-  font-family: "SanBlack";
-  font-size: 5.5rem;
+.csr__content-stats--banner {
+  position: relative;
+  background-color: $fixedNav;
+  background-color: $gradientLight;
+  color: $white;
+  width: 90%;
+  max-width: 600px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
-.procentage-text {
-  font-family: "SanSoft";
-  font-size: 1.5rem;
-  font-weight: bold;
+.csr__content-stats--info {
+  font-family: "NotoReg";
+  margin: 0 0 0 5rem;
+  font-size: clamp(0.75rem, 1vw, 1rem);
+  text-align: left;
+  min-height: 4rem;
 }
+.csr__content-stats--circle {
+  font-family: "NotoReg";
+  font-size: 2rem;
+  position: absolute;
+  background: linear-gradient(45deg, $gradientLight, $gradientDark);
+  padding: 1rem;
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -0.25rem;
+  left: 1rem;
+
+  // @media screen and (max-width: 1200px) {
+  //   height: 75px;
+  //   width: 75px;
+  //   top: -0.15rem;
+  // }
+  // @media screen and (max-width: 1000px) {
+  //   height: 70px;
+  //   width: 70px;
+  //   top: -0.5rem;
+  // }
+  // @media screen and (max-width: 600px) {
+  //   height: 70px;
+  //   width: 70px;
+  //   top: -0.1rem;
+  // }
+  @media screen and (max-width: 1200px) {
+    height: 70px;
+    width: 70px;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+// .procentage-number {
+//   font-family: "SanBlack";
+//   font-size: 5.5rem;
+// }
+// .procentage-text {
+//   font-family: "SanSoft";
+//   font-size: 1.5rem;
+//   font-weight: bold;
+// }
 .csr__content-image {
   width: 100%;
   position: relative;
@@ -1117,6 +1181,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: "SanSoft";
+
   &:hover {
     // border: 1px solid $gradientDark;
     background: linear-gradient(85deg, $gradientLight, $gradientDark);
